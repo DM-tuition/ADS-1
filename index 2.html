@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ADS — Staying Harder.</title>
+<title>ADS — Staying Harder. | AyaanDanShenanigins</title>
+<meta name="description" content="AyaanDanShenanigins (ADS) — two school friends taking on increasingly ridiculous endurance challenges to raise real money for charity. £2,350+ raised since August 2025."/>
+<meta name="author" content="AyaanDanShenanigins"/>
+<meta name="theme-color" content="#080C14"/>
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ADS — Staying Harder."/>
+<meta property="og:description" content="Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes."/>
+<meta property="og:site_name" content="AyaanDanShenanigins"/>
+<meta property="og:locale" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ADS — Staying Harder."/>
+<meta name="twitter:description" content="Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes."/>
+<!-- Favicon: the ADS mark, inlined as SVG so there's no extra request -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23080C14'/%3E%3Cpolygon points='11,4 36,4 36,36 4,36 4,14' fill='none' stroke='%23D4A017' stroke-width='1.8'/%3E%3Ccircle cx='11' cy='14' r='2.2' fill='%23D4A017'/%3E%3Ctext x='20' y='27' font-family='Arial Black,Impact,sans-serif' font-size='13' font-weight='900' fill='%23EDF2FF' text-anchor='middle'%3EADS%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
@@ -36,6 +50,13 @@
   .nav-links{display:flex;gap:30px;list-style:none}
   .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--gold)}
+  .mobile-donate{display:none}
+  /* Mobile hamburger */
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:0;cursor:pointer;padding:8px;z-index:210}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--white);transition:transform .3s ease,opacity .2s ease}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;background:var(--gold);color:var(--bg);padding:10px 22px;border:none;cursor:pointer;transition:background .2s,transform .15s}
   .btn:hover{background:var(--gold-hi);transform:translateY(-2px)}
 
@@ -200,9 +221,62 @@
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
 
+  /* FLASH: scroll progress bar */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;
+    background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--gold-hi));
+    box-shadow:0 0 12px rgba(212,160,23,.6);transition:width .1s linear}
+
+  /* FLASH: animated shimmer sweep across the gold accent in the hero */
+  .hero-title .gold{background:linear-gradient(110deg,var(--gold) 0%,var(--gold-hi) 30%,#fff7df 45%,var(--gold-hi) 60%,var(--gold) 100%);
+    background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    animation:shimmer 5.5s ease-in-out infinite}
+  @keyframes shimmer{0%,100%{background-position:140% 0}50%{background-position:-40% 0}}
+
+  /* FLASH: pulsing glow behind hero radial */
+  .hero-bg{animation:bgpulse 9s ease-in-out infinite}
+  @keyframes bgpulse{0%,100%{opacity:1}50%{opacity:.65}}
+
+  /* FLASH: 3D tilt on challenge cards */
+  .ch-grid{perspective:1200px}
+  .ch-card{transform-style:preserve-3d;will-change:transform}
+
+  /* FLASH: stat numbers get a soft gold glow */
+  .stat-n{text-shadow:0 0 24px rgba(212,160,23,.18)}
+
+  /* Field validation error state */
+  .field input.error,.field select.error,.field textarea.error{border-color:#e0533d!important;box-shadow:0 0 0 1px rgba(224,83,61,.4)}
+
+  /* FLASH: back-to-top button */
+  #toTop{position:fixed;bottom:28px;right:28px;z-index:220;width:48px;height:48px;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    background:var(--gold);color:var(--bg);border:0;border-radius:2px;
+    opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease,background .2s;
+    box-shadow:0 8px 30px rgba(212,160,23,.35)}
+  #toTop.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+  #toTop:hover{background:var(--gold-hi);transform:translateY(-3px) scale(1.05)}
+
+  /* Respect users who prefer reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+
   @media(max-width:960px){
     nav{padding:14px 24px}
-    .nav-links{display:none}
+    .nav-toggle{display:flex}
+    nav .btn{display:none}
+    .nav-links{
+      position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);
+      flex-direction:column;justify-content:center;gap:26px;padding:0 40px;
+      background:rgba(8,12,20,.97);backdrop-filter:blur(14px);
+      border-left:1px solid var(--border);
+      transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+      z-index:205
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:16px;letter-spacing:3px}
+    .nav-links .mobile-donate{display:block;margin-top:8px;color:var(--gold);border:1px solid var(--gold);padding:12px 22px;text-align:center}
     section{padding:72px 24px}
     #hero{padding:0 24px 64px}
     #about{grid-template-columns:1fr;gap:48px}
@@ -227,10 +301,13 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS -->
+<div id="progress" aria-hidden="true"></div>
+
 <!-- LIGHTBOX -->
-<div id="lb" onclick="closeLB()">
-  <div id="lb-close">✕ CLOSE</div>
-  <img id="lb-img" src="" alt=""/>
+<div id="lb" onclick="closeLB()" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div id="lb-close" role="button" tabindex="0" aria-label="Close image viewer">✕ CLOSE</div>
+  <img id="lb-img" src="" alt="Enlarged gallery image"/>
 </div>
 
 <!-- NAV -->
@@ -243,15 +320,19 @@
     </svg>
     <div class="nav-wm">AYAAN<em>&</em>DAN</div>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#challenges">Challenges</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#socials">Follow</a></li>
     <li><a href="#suggest">Suggest</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="mobile-donate">Donate ↗</a></li>
   </ul>
-  <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" class="btn">Donate</a>
+  <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="btn">Donate</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -502,25 +583,25 @@
 <section id="socials">
   <div class="reveal"><div class="sec-label">Find Us</div><h2 class="sec-title">Follow the<br>suffering.</h2></div>
   <div class="social-grid">
-    <a href="https://instagram.com/ayaandanshenanigins" target="_blank" class="social-card reveal">
+    <a href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener" class="social-card reveal">
       <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="#D4A017"/></svg></div>
       <div class="social-name">Instagram</div>
       <div class="social-handle">@ayaandanshenanigins<br><span style="color:var(--gold);font-size:11px">293 followers</span></div>
       <div class="social-arrow">↗</div>
     </a>
-    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" class="social-card reveal">
+    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="social-card reveal">
       <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
       <div class="social-name">Tiltify</div>
       <div class="social-handle">@ayaan-dan-shenanigans<br><span style="color:var(--gold);font-size:11px">£1,063 raised</span></div>
       <div class="social-arrow">↗</div>
     </a>
-    <a href="https://youtube.com/@ayaandanshenanigins" target="_blank" class="social-card reveal">
+    <a href="https://youtube.com/@ayaandanshenanigins" target="_blank" rel="noopener" class="social-card reveal">
       <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45a2.78 2.78 0 0 0-1.95 1.97A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#D4A017" stroke="none"/></svg></div>
       <div class="social-name">YouTube</div>
       <div class="social-handle">Long-form challenge docs<br><span style="color:var(--muted);font-size:11px">Full vlogs</span></div>
       <div class="social-arrow">↗</div>
     </a>
-    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" class="social-card reveal">
+    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="social-card reveal">
       <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <div class="social-name">Donate</div>
       <div class="social-handle">Support the cause<br><span style="color:var(--gold);font-size:11px">via Tiltify →</span></div>
@@ -536,17 +617,17 @@
     <h2 class="sec-title">Suggest a<br>challenge.</h2>
     <p class="suggest-body">Got an idea that'll make us suffer? <strong>We want to hear it.</strong> The more unhinged the better. Every challenge starts somewhere.</p>
   </div>
-  <div class="form reveal">
+  <form class="form reveal" id="suggestForm" novalidate>
     <div class="form-row">
-      <div class="field"><label>Your Name</label><input type="text" placeholder="First name" id="sn"/></div>
-      <div class="field"><label>Difficulty</label><select id="sd"><option value="">Select...</option><option>Painful (warm-up tier)</option><option>Brutal (proper challenge)</option><option>Disgusting (Goggins tier)</option><option>Actually impossible</option></select></div>
+      <div class="field"><label for="sn">Your Name</label><input type="text" placeholder="First name" id="sn" name="name" autocomplete="given-name"/></div>
+      <div class="field"><label for="sd">Difficulty</label><select id="sd" name="difficulty"><option value="">Select...</option><option>Painful (warm-up tier)</option><option>Brutal (proper challenge)</option><option>Disgusting (Goggins tier)</option><option>Actually impossible</option></select></div>
     </div>
-    <div class="field"><label>Challenge Name</label><input type="text" placeholder="Give it a name" id="st"/></div>
-    <div class="field"><label>Describe It</label><textarea placeholder="What is it? Distance, time, conditions, why it would break us..." id="sb"></textarea></div>
-    <div class="field"><label>Suggested Charity (optional)</label><input type="text" placeholder="e.g. Mind, Cancer Research UK" id="sc"/></div>
-    <button class="btn" onclick="handleSuggest()" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Submit Challenge <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-    <div class="success" id="suc-s">Challenge submitted — we'll consider putting ourselves through it.</div>
-  </div>
+    <div class="field"><label for="st">Challenge Name</label><input type="text" placeholder="Give it a name" id="st" name="challenge" required/></div>
+    <div class="field"><label for="sb">Describe It</label><textarea placeholder="What is it? Distance, time, conditions, why it would break us..." id="sb" name="description" required></textarea></div>
+    <div class="field"><label for="sc">Suggested Charity (optional)</label><input type="text" placeholder="e.g. Mind, Cancer Research UK" id="sc" name="charity"/></div>
+    <button type="submit" class="btn" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Submit Challenge <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    <div class="success" id="suc-s" role="status">Challenge submitted — we'll consider putting ourselves through it. Your email app should open to send it our way.</div>
+  </form>
 </section>
 
 <!-- CONTACT -->
@@ -555,27 +636,27 @@
   <div class="contact-grid">
     <div class="contact-info reveal">
       <div><div class="ci-label">Sponsorship</div><div class="ci-val">Want to sponsor a challenge or get your brand in front of a growing audience? We're open to partnerships.</div></div>
-      <div><div class="ci-label">Instagram</div><div class="ci-val"><a href="https://instagram.com/ayaandanshenanigins" target="_blank">@ayaandanshenanigins</a></div></div>
-      <div><div class="ci-label">Fundraising</div><div class="ci-val"><a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank">tiltify.com/@ayaan-dan-shenanigans</a></div></div>
+      <div><div class="ci-label">Instagram</div><div class="ci-val"><a href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener">@ayaandanshenanigins</a></div></div>
+      <div><div class="ci-label">Fundraising</div><div class="ci-val"><a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener">tiltify.com/@ayaan-dan-shenanigans</a></div></div>
       <div><div class="ci-label">Current Sponsors</div><div class="ci-val">@thewindowco · @pizzaanna_ · GymRats App</div></div>
     </div>
-    <div class="form reveal">
-      <div class="field"><label>Name</label><input type="text" placeholder="Your name" id="cn"/></div>
-      <div class="field"><label>Email</label><input type="email" placeholder="email@example.com" id="ce"/></div>
-      <div class="field"><label>Subject</label><select id="cs"><option value="">Select...</option><option>Sponsorship Enquiry</option><option>Press / Media</option><option>Charity Partnership</option><option>General Message</option><option>Fan Mail (we like this one)</option></select></div>
-      <div class="field"><label>Message</label><textarea placeholder="What's on your mind?" id="cm"></textarea></div>
-      <button class="btn" onclick="handleContact()" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      <div class="success" id="suc-c">Message sent — we'll get back to you soon.</div>
-    </div>
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="field"><label for="cn">Name</label><input type="text" placeholder="Your name" id="cn" name="name" autocomplete="name" required/></div>
+      <div class="field"><label for="ce">Email</label><input type="email" placeholder="email@example.com" id="ce" name="email" autocomplete="email" required/></div>
+      <div class="field"><label for="cs">Subject</label><select id="cs" name="subject"><option value="">Select...</option><option>Sponsorship Enquiry</option><option>Press / Media</option><option>Charity Partnership</option><option>General Message</option><option>Fan Mail (we like this one)</option></select></div>
+      <div class="field"><label for="cm">Message</label><textarea placeholder="What's on your mind?" id="cm" name="message" required></textarea></div>
+      <button type="submit" class="btn" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <div class="success" id="suc-c" role="status">Message ready — your email app should open to send it. We'll get back to you soon.</div>
+    </form>
   </div>
 </section>
 
 <!-- SPONSORS -->
 <div id="sponsors">
   <div class="sp-lbl">Sponsors</div>
-  <a href="https://instagram.com/thewindowco" target="_blank" class="sp-link">@TheWindowCo</a>
-  <a href="https://instagram.com/pizzaanna_" target="_blank" class="sp-link">@PizzaAnna</a>
-  <a href="https://share.gymrats.app" target="_blank" class="sp-link">GymRats App</a>
+  <a href="https://instagram.com/thewindowco" target="_blank" rel="noopener" class="sp-link">@TheWindowCo</a>
+  <a href="https://instagram.com/pizzaanna_" target="_blank" rel="noopener" class="sp-link">@PizzaAnna</a>
+  <a href="https://share.gymrats.app" target="_blank" rel="noopener" class="sp-link">GymRats App</a>
   <span class="sp-link sp-cta">Become a sponsor →</span>
 </div>
 
@@ -593,38 +674,159 @@
   <div class="footer-copy">© 2025–2026 AyaanDanShenanigins<br>UK Endurance &amp; Charity</div>
 </footer>
 
+<!-- BACK TO TOP -->
+<button id="toTop" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
-  // Reveal on scroll
+  'use strict';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Where form submissions go ----
+  const CONTACT_EMAIL = 'dmtuition2026@gmail.com';
+
+  // ---- Reveal on scroll ----
   const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:.08,rootMargin:'0px 0px -36px 0px'});
   document.querySelectorAll('.ch-grid .reveal').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*65}ms`});
   document.querySelectorAll('.social-grid .reveal').forEach((el,i)=>{el.style.transitionDelay=`${i*55}ms`});
   document.querySelectorAll('.gallery-grid .reveal').forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*60}ms`});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  // Nav compact
+  // ---- Nav compact on scroll ----
   const nav=document.getElementById('nav');
-  window.addEventListener('scroll',()=>nav.classList.toggle('compact',scrollY>60),{passive:true});
 
-  // Lightbox
-  function openLB(src){const lb=document.getElementById('lb');document.getElementById('lb-img').src=src;lb.classList.add('open')}
-  function closeLB(){document.getElementById('lb').classList.remove('open')}
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB()});
+  // ---- Mobile hamburger menu ----
+  const navToggle=document.getElementById('navToggle'), navLinks=document.getElementById('navLinks');
+  function setMenu(open){
+    navLinks.classList.toggle('open',open);
+    navToggle.setAttribute('aria-expanded',open);
+    navToggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+    document.body.style.overflow=open?'hidden':'';
+  }
+  navToggle.addEventListener('click',()=>setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
-  // Forms
-  function handleSuggest(){
-    const t=document.getElementById('st').value.trim(),b=document.getElementById('sb').value.trim();
-    if(!t||!b){alert('Give us at least a name and description.');return}
-    document.getElementById('suc-s').style.display='block';
-    ['sn','sd','st','sb','sc'].forEach(id=>document.getElementById(id).value='');
-    setTimeout(()=>document.getElementById('suc-s').style.display='none',5000)
+  // ---- Scroll progress bar + back-to-top + nav state (one combined listener) ----
+  const progress=document.getElementById('progress'), toTop=document.getElementById('toTop'), ghost=document.querySelector('.hero-ghost');
+  function onScroll(){
+    const h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    const pct=max>0?(h.scrollTop/max)*100:0;
+    progress.style.width=pct+'%';
+    nav.classList.toggle('compact',scrollY>60);
+    toTop.classList.toggle('show',scrollY>600);
+    if(ghost && !reduceMotion) ghost.style.transform=`translateY(${scrollY*0.12}px)`; // parallax
   }
-  function handleContact(){
-    const n=document.getElementById('cn').value.trim(),e=document.getElementById('ce').value.trim(),m=document.getElementById('cm').value.trim();
-    if(!n||!e||!m){alert('Fill in name, email and message.');return}
-    document.getElementById('suc-c').style.display='block';
-    ['cn','ce','cs','cm'].forEach(id=>document.getElementById(id).value='');
-    setTimeout(()=>document.getElementById('suc-c').style.display='none',5000)
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+
+  // ---- Animated count-up for hero stats ----
+  function animateCount(el){
+    const raw=el.textContent, m=raw.match(/[\d,]+/);
+    if(!m){return}
+    const target=parseInt(m[0].replace(/,/g,''),10), prefix=raw.slice(0,m.index), suffix=raw.slice(m.index+m[0].length);
+    if(reduceMotion){return}
+    let start=null; const dur=1400;
+    function step(t){
+      if(!start)start=t;
+      const p=Math.min((t-start)/dur,1), eased=1-Math.pow(1-p,3);
+      const val=Math.round(target*eased).toLocaleString('en-GB');
+      el.childNodes[0].nodeValue=prefix+val+(el.querySelector('span')?'':suffix);
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
   }
+  const heroStats=document.querySelector('.hero-stats');
+  if(heroStats){
+    const so=new IntersectionObserver(es=>es.forEach(x=>{
+      if(x.isIntersecting){document.querySelectorAll('.stat-n').forEach(animateCount);so.disconnect();}
+    }),{threshold:.4});
+    so.observe(heroStats);
+  }
+
+  // ---- Subtle 3D tilt on challenge cards ----
+  if(!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.ch-card').forEach(card=>{
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const rx=((e.clientY-r.top)/r.height-.5)*-6, ry=((e.clientX-r.left)/r.width-.5)*6;
+        card.style.transform=`translateY(-3px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      card.addEventListener('mouseleave',()=>{card.style.transform='';});
+    });
+  }
+
+  // ---- Lightbox (with focus return) ----
+  let lbReturn=null;
+  function openLB(src){const lb=document.getElementById('lb');lbReturn=document.activeElement;document.getElementById('lb-img').src=src;lb.classList.add('open');document.getElementById('lb-close').focus();}
+  function closeLB(){document.getElementById('lb').classList.remove('open');if(lbReturn)lbReturn.focus();}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLB();if(navLinks.classList.contains('open'))setMenu(false);}});
+  document.getElementById('lb-close').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();closeLB();}});
+
+  // ---- Working forms (open the user's mail client, pre-filled) ----
+  function markErrors(form){
+    let firstBad=null;
+    form.querySelectorAll('[required]').forEach(f=>{
+      const bad=!f.value.trim()||(f.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value.trim()));
+      f.classList.toggle('error',bad);
+      if(bad&&!firstBad)firstBad=f;
+    });
+    if(firstBad)firstBad.focus();
+    return !firstBad;
+  }
+  function showSuccess(id){
+    const el=document.getElementById(id);
+    el.style.display='block';
+    setTimeout(()=>{el.style.display='none';},6000);
+  }
+
+  const suggestForm=document.getElementById('suggestForm');
+  suggestForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!markErrors(suggestForm))return;
+    const v=id=>document.getElementById(id).value.trim();
+    const subject=`Challenge Suggestion: ${v('st')}`;
+    const body=`Name: ${v('sn')||'(not given)'}\nDifficulty: ${v('sd')||'(not given)'}\nChallenge: ${v('st')}\n\nDescription:\n${v('sb')}\n\nSuggested charity: ${v('sc')||'(none)'}`;
+    window.location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showSuccess('suc-s');
+    suggestForm.reset();
+  });
+
+  const contactForm=document.getElementById('contactForm');
+  contactForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!markErrors(contactForm))return;
+    const v=id=>document.getElementById(id).value.trim();
+    const subject=`[ADS Contact] ${v('cs')||'General Message'} — ${v('cn')}`;
+    const body=`Name: ${v('cn')}\nEmail: ${v('ce')}\nSubject: ${v('cs')||'General Message'}\n\nMessage:\n${v('cm')}`;
+    window.location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showSuccess('suc-c');
+    contactForm.reset();
+  });
+
+  // Clear an error highlight as soon as the user starts fixing the field
+  document.querySelectorAll('.field input,.field textarea,.field select').forEach(f=>{
+    f.addEventListener('input',()=>f.classList.remove('error'));
+  });
+
+  // ---- Accessibility: give content images meaningful alt text from nearby labels ----
+  document.querySelectorAll('.g-item img').forEach(img=>{
+    const lbl=img.closest('.g-item').querySelector('.g-label');
+    if(lbl && !img.alt) img.alt=lbl.textContent.trim();
+    img.setAttribute('loading','lazy'); img.setAttribute('decoding','async');
+  });
+  document.querySelectorAll('.ch-card .ch-img').forEach(img=>{
+    const name=img.closest('.ch-card').querySelector('.ch-name');
+    if(name && !img.alt) img.alt=name.textContent.trim();
+    img.setAttribute('loading','lazy'); img.setAttribute('decoding','async');
+  });
+  document.querySelectorAll('.strip-img').forEach((img,i)=>{
+    if(!img.alt) img.alt=`AyaanDanShenanigins challenge photo ${i+1}`;
+    img.setAttribute('decoding','async');
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',()=>openLB(img.src)); // make the hero photo strip clickable too
+  });
 </script>
 </body>
 </html>
