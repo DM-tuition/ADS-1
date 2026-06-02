@@ -28,6 +28,9 @@
 <!-- SCROLL PROGRESS -->
 <div id="progress" aria-hidden="true"></div>
 
+<!-- AURORA -->
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
 <!-- LIGHTBOX -->
 <div id="lb" onclick="closeLB()" role="dialog" aria-modal="true" aria-label="Image viewer">
   <div id="lb-close" role="button" tabindex="0" aria-label="Close image viewer">✕ CLOSE</div>
@@ -48,6 +51,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#challenges">Challenges</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="challenges/appearances.html">On Stage</a></li>
     <li><a href="#socials">Follow</a></li>
     <li><a href="#suggest">Suggest</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -87,6 +91,9 @@
   <img class="strip-img" src="images/photo-05.jpg" alt="Strava 48 miles" onclick="openLB(this.src)"/>
 </div>
 
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><b>Staying <em>Harder</em></b><span class="dot">&#9679;</span><b>&pound;2,350+ Raised</b><span class="dot">&#9679;</span><b>7 Challenges Done</b><span class="dot">&#9679;</span><b><em>Ayaan &amp; Dan</em></b><span class="dot">&#9679;</span><b>100km in 20 Hours</b><span class="dot">&#9679;</span><b>3,000 Push-Ups</b><span class="dot">&#9679;</span><b>Three Peaks Next</b><span class="dot">&#9679;</span></div></div>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-visual reveal">
@@ -124,82 +131,89 @@
   <div class="reveal"><div class="sec-label">The Suffering Log</div><h2 class="sec-title">Challenges</h2></div>
   <div class="ch-grid">
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/marathon-debut.html">
       <div class="ch-ghost">01</div>
-      <img class="ch-img" src="images/photo-07.jpg" alt="Manchester Marathon"/>
+      <img class="ch-img" src="images/photo-07.jpg" alt="The First Marathon"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">Manchester Marathon</div>
-        <div class="ch-detail">The official Manchester Marathon — first ever. 5 hrs 20 mins. The ADS debut.</div>
-        <div class="ch-raised">Raised: £600</div>
+        <div class="ch-name">The First Marathon</div>
+        <div class="ch-detail">Our first ever marathon — 42.17km, completely self-organised, on the morning of prom. Zero training. The birth of ADS.</div>
+        <div class="ch-raised">The debut →</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/100k.html">
       <div class="ch-ghost">02</div>
-      <img class="ch-img" src="images/photo-08.jpg" alt="100K Run"/>
+      <img class="ch-img" src="images/photo-08.jpg" alt="The 100K Run"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">100K Run</div>
-        <div class="ch-detail">100km in ~22 hours around Trafford. Dan got a Headmaster's Commendation for this one.</div>
-        <div class="ch-raised">Raised: ~£1,000</div>
+        <div class="ch-name">The 100K Run</div>
+        <div class="ch-detail">5km every hour for 20 hours straight — 100.18km for clean water. Featured by Altrincham HQ as local heroes.</div>
+        <div class="ch-raised">~£1,100 · WaterAid</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/triathlon.html">
       <div class="ch-ghost">03</div>
-      <img class="ch-img" src="images/photo-09.jpg" alt="Triathlon"/>
+      <img class="ch-img" src="images/photo-09.jpg" alt="The Triathlon"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">Triathlon</div>
-        <div class="ch-detail">Self-organised swim, bike, run. 2,175m swim · full bike · run. Completed.</div>
+        <div class="ch-name">The Triathlon</div>
+        <div class="ch-detail">Self-organised: 2,000m swim · 40km bike · 10km run. No event, no medal — just the three disciplines.</div>
         <div class="ch-raised">Completed ✓</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/push-ups.html">
       <div class="ch-ghost">04</div>
-      <img class="ch-img" src="images/photo-10.jpg" alt="3000 Push-Ups"/>
+      <img class="ch-img" src="images/photo-10.jpg" alt="3,000 Push-Ups"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
         <div class="ch-name">3,000 Push-Ups</div>
-        <div class="ch-detail">100 push-ups/day for all of November. 119 participants joined on GymRats. £1,063 raised — smashed the goal.</div>
+        <div class="ch-detail">100 push-ups a day, all November. 119 people joined on GymRats — 218,197 reps logged. Smashed the £1,000 goal.</div>
         <div class="ch-raised">Raised: £1,063.67</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/48-48.html">
       <div class="ch-ghost">05</div>
-      <img class="ch-img" src="images/photo-11.jpg" alt="48 Mile Walk"/>
+      <img class="ch-img" src="images/photo-11.jpg" alt="48 Miles / 48 Hours"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">48-Mile Walk</div>
-        <div class="ch-detail">4 miles every 4 hours for 48 straight hours. New Year's Eve into New Year. "Would not recommend."</div>
+        <div class="ch-name">48 Miles / 48 Hours</div>
+        <div class="ch-detail">4 miles every 4 hours for 48 hours, NYE into the New Year. Redemption for last year's failed attempt. "Would not recommend."</div>
         <div class="ch-raised">Completed ✓</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/pizza-run.html">
       <div class="ch-ghost">06</div>
-      <img class="ch-img" src="images/photo-12.jpg" alt="Pizza Run"/>
+      <img class="ch-img" src="images/photo-12.jpg" alt="The Pizza Run"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">Pizza Run</div>
-        <div class="ch-detail">Ran 25km = 8 free Franco Manca pizzas worth £75+. Sponsored by @pizzaanna_.</div>
-        <div class="ch-raised">Sponsored ✓</div>
+        <div class="ch-name">The Pizza Run</div>
+        <div class="ch-detail">Franco Manca's 'No Rules Jan' — £1 off per km. Three of us ran 27.45km each = 8 free pizzas, £75.60 wiped off.</div>
+        <div class="ch-raised">8 pizzas ✓</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <div class="ch-card reveal">
+    <a class="ch-card reveal" href="challenges/manchester-marathon.html">
       <div class="ch-ghost">07</div>
-      <img class="ch-img" src="images/photo-13.jpg" alt="Official Manchester Marathon"/>
+      <img class="ch-img" src="images/photo-13.jpg" alt="Manchester Marathon"/>
       <div class="ch-body">
         <span class="badge badge-done">Completed</span>
-        <div class="ch-name">Official Manchester Marathon</div>
-        <div class="ch-detail">Back to Manchester — the official race. Most recently completed challenge.</div>
-        <div class="ch-raised">Completed ✓</div>
+        <div class="ch-name">Manchester Marathon</div>
+        <div class="ch-detail">The official adidas Manchester Marathon, 19 April 2026. Both ran it; Dan crossed in 4:26.</div>
+        <div class="ch-raised">Raised: £100 · BHF</div>
+        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-    </div>
+    </a>
 
     <div class="ch-card featured reveal">
       <div class="ch-ghost">08</div>
@@ -256,7 +270,7 @@
   <div class="charities">
     <span class="charity">British Heart Foundation</span>
     <span class="charity">Teenage Cancer Trust</span>
-    <span class="charity">Team Water</span>
+    <span class="charity">WaterAid</span>
   </div>
 </section>
 
@@ -310,7 +324,7 @@
     <a href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener" class="social-card reveal">
       <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="#D4A017"/></svg></div>
       <div class="social-name">Instagram</div>
-      <div class="social-handle">@ayaandanshenanigins<br><span style="color:var(--gold);font-size:11px">293 followers</span></div>
+      <div class="social-handle">@ayaandanshenanigins<br><span style="color:var(--gold);font-size:11px">254 followers</span></div>
       <div class="social-arrow">↗</div>
     </a>
     <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="social-card reveal">
