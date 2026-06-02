@@ -184,14 +184,14 @@ if (!RM && innerWidth > 720) {
   const ctx = c.getContext('2d');
   let W, H, parts;
   const size = () => { W = c.width = innerWidth; H = c.height = innerHeight; };
-  const init = () => { parts = Array.from({ length: 55 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.7 + .4, s: Math.random() * .4 + .08, o: Math.random() * .45 + .08 })); };
+  const init = () => { parts = Array.from({ length: 34 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.5 + .4, s: Math.random() * .35 + .07, o: Math.random() * .16 + .05 })); };
   function draw() {
     ctx.clearRect(0, 0, W, H);
     for (const p of parts) {
       p.y -= p.s; p.x += Math.sin(p.y * .01) * .15;
       if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; }
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7);
-      ctx.fillStyle = 'rgba(212,160,23,' + p.o + ')'; ctx.fill();
+      ctx.fillStyle = 'rgba(184,133,28,' + p.o + ')'; ctx.fill();
     }
     requestAnimationFrame(draw);
   }

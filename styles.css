@@ -385,3 +385,100 @@
 a.ch-card{text-decoration:none;color:inherit}
 
 img{image-orientation:from-image}
+
+/* ==================================================================
+   LIGHT · PROFESSIONAL THEME  (override layer — wins by cascade order)
+   ================================================================== */
+:root{
+  --gold:#B8851C; --gold-hi:#D6A12B; --gold-dim:#8E6712;
+  --bg:#FFFFFF; --surface:#F5F7FA; --card:#FFFFFF;
+  --border:#E7EBF2; --bhi:#D3DAE5;
+  --white:#151B26; --muted:#5C6675; --faint:#A7AFBD;
+}
+body{color:var(--white)}
+body::before{opacity:.012}
+
+/* NAV — frosted white */
+nav{background:rgba(255,255,255,.82);border-bottom:1px solid var(--border)}
+nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38,.07)}
+.nav-toggle span{background:var(--white)}
+
+/* Buttons — gold fill, dark legible text */
+.btn{background:var(--gold);color:#FFFFFF}
+.btn:hover{background:var(--gold-hi)}
+
+/* HERO */
+.hero-bg{background:radial-gradient(ellipse 55% 60% at 72% 38%,rgba(184,133,28,.10),transparent 60%),radial-gradient(ellipse 40% 50% at 14% 82%,rgba(184,133,28,.06),transparent 55%),var(--bg)}
+.hero-grid{background-image:linear-gradient(rgba(21,27,38,.038) 1px,transparent 1px),linear-gradient(90deg,rgba(21,27,38,.038) 1px,transparent 1px)}
+.hero-ghost{color:rgba(184,133,28,.07)}
+.hero-title .outline{-webkit-text-stroke:2px rgba(21,27,38,.32)}
+
+/* PHOTO STRIP — bright, sleeker */
+#photostrip{height:312px}
+.strip-img{filter:brightness(1) saturate(1.02) contrast(1.02);object-position:center 30%}
+.strip-img:hover{filter:brightness(1.05) saturate(1.1)}
+
+/* SECTION cards / badges */
+.badge-done{background:rgba(21,27,38,.06);color:var(--muted)}
+.badge-next{background:var(--gold);color:#FFFFFF}
+.badge-planned{background:rgba(184,133,28,.14);color:var(--gold-dim)}
+.badge-summer{background:rgba(184,133,28,.18);color:var(--gold-dim)}
+.ch-ghost{color:rgba(21,27,38,.05)}
+.ch-img{filter:brightness(.99) saturate(1)}
+.ch-card:hover .ch-img{filter:brightness(1.03) saturate(1.06)}
+.ch-card{box-shadow:0 1px 2px rgba(20,27,38,.04)}
+.ch-card:hover{box-shadow:0 16px 44px rgba(20,27,38,.11)}
+.ch-card.featured{background:linear-gradient(135deg,rgba(184,133,28,.07),var(--card) 62%)}
+
+/* GALLERY */
+.g-item img{filter:brightness(.97) saturate(1)}
+.g-item:hover img{filter:brightness(1.05) saturate(1.07)}
+
+/* social icon chip */
+.social-icon{background:rgba(21,27,38,.03)}
+
+/* lightbox stays a focused dark viewer */
+#lb{background:rgba(16,20,28,.93)}
+
+/* ABOUT visual — light */
+.about-frame-img{opacity:.95;filter:saturate(1)}
+.about-frame-overlay{background:linear-gradient(135deg,rgba(255,255,255,.45),rgba(184,133,28,.10))}
+
+/* inline SVG logo lettering -> dark (CSS beats fill="" attribute) */
+.nav-logo svg text,.footer-logo svg text,.about-logo-center svg text{fill:var(--white)}
+
+/* AURORA — subtle, multiply so it tints white */
+.aurora span{mix-blend-mode:multiply;opacity:.55;filter:blur(110px)}
+.aurora span:nth-child(1){background:radial-gradient(circle,rgba(184,133,28,.16),transparent 70%)}
+.aurora span:nth-child(2){background:radial-gradient(circle,rgba(110,140,190,.12),transparent 70%)}
+.aurora span:nth-child(3){background:radial-gradient(circle,rgba(184,133,28,.10),transparent 70%)}
+
+/* MARQUEE */
+.marquee{background:linear-gradient(90deg,rgba(184,133,28,.06),transparent,rgba(184,133,28,.06))}
+
+/* ===== CHALLENGE SUBPAGES — lighter, editorial ===== */
+.cnav{background:rgba(255,255,255,.78)}
+.cnav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38,.07)}
+.chero{min-height:80vh}
+.chero-img img{filter:brightness(1) saturate(1.03) contrast(1.02);object-position:center 30%}
+.chero-img::after{background:linear-gradient(to top,#FFFFFF 0%,rgba(255,255,255,.86) 24%,rgba(255,255,255,.3) 52%,rgba(255,255,255,0) 72%)}
+.chero-num{color:rgba(184,133,28,.10)}
+.chero-tag{background:rgba(255,255,255,.7)}
+.chero-meta i{color:var(--faint)}
+.cquote{background:var(--surface)}
+.cquote .mark{color:rgba(184,133,28,.09)}
+.cstat{box-shadow:none}
+.cstat:hover{background:var(--surface)}
+.cstat-n{text-shadow:none}
+.cpress{background:linear-gradient(90deg,rgba(184,133,28,.10),transparent)}
+.cgallery-grid img{filter:brightness(.97) saturate(1)}
+.cg:hover img{filter:brightness(1.05) saturate(1.06)}
+.ccta{box-shadow:0 1px 2px rgba(20,27,38,.04)}
+.cpn a:hover{background:var(--surface)}
+
+/* Mobile drawer — white */
+@media(max-width:960px){
+  .nav-links{background:rgba(255,255,255,.98);border-left:1px solid var(--border)}
+  .nav-links a{color:var(--white)}
+  .nav-links .mobile-donate{color:#FFFFFF;background:var(--gold);border:0}
+}
