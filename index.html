@@ -3,418 +3,258 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ADS — Staying Harder. | AyaanDanShenanigins</title>
-<meta name="description" content="AyaanDanShenanigins (ADS) — two school friends taking on increasingly ridiculous endurance challenges to raise real money for charity. £2,350+ raised since August 2025."/>
-<meta name="author" content="AyaanDanShenanigins"/>
-<meta name="theme-color" content="#080C14"/>
-<!-- Open Graph / social sharing -->
+<title>AyaanDanShenanigins — Staying Harder.</title>
+<meta name="description" content="Two school friends taking on increasingly ridiculous endurance challenges to raise real money for charity. £2,350+ raised since 2025."/>
+<meta name="theme-color" content="#FFFFFF"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="ADS — Staying Harder."/>
-<meta property="og:description" content="Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes."/>
-<meta property="og:site_name" content="AyaanDanShenanigins"/>
-<meta property="og:locale" content="en_GB"/>
+<meta property="og:title" content="AyaanDanShenanigins — Staying Harder."/>
+<meta property="og:description" content="Two mates. Increasingly ridiculous physical challenges. Real money raised for real causes."/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="ADS — Staying Harder."/>
-<meta name="twitter:description" content="Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes."/>
-<!-- Favicon: the ADS mark, inlined as SVG so there's no extra request -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23080C14'/%3E%3Cpolygon points='11,4 36,4 36,36 4,36 4,14' fill='none' stroke='%23D4A017' stroke-width='1.8'/%3E%3Ccircle cx='11' cy='14' r='2.2' fill='%23D4A017'/%3E%3Ctext x='20' y='27' font-family='Arial Black,Impact,sans-serif' font-size='13' font-weight='900' fill='%23EDF2FF' text-anchor='middle'%3EADS%3C/text%3E%3C/svg%3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23FFFFFF'/%3E%3Crect x='1' y='1' width='38' height='38' fill='none' stroke='%2315171C' stroke-width='2'/%3E%3Ctext x='20' y='27' font-family='Arial Black,Impact,sans-serif' font-size='15' font-weight='900' fill='%2315171C' text-anchor='middle'%3EADS%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="home.css"/>
 </head>
-<body>
+<body id="top">
 
-<!-- SCROLL PROGRESS -->
 <div id="progress" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span></span><span></span></div>
 
-<!-- AURORA -->
-<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
-
-<!-- LIGHTBOX -->
-<div id="lb" onclick="closeLB()" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div id="lb-close" role="button" tabindex="0" aria-label="Close image viewer">✕ CLOSE</div>
-  <img id="lb-img" src="" alt="Enlarged gallery image"/>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div id="lb-close" role="button" tabindex="0" aria-label="Close">&#10005;&nbsp; CLOSE</div>
+  <img id="lb-img" src="" alt="Enlarged photo"/>
 </div>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="11,4 36,4 36,36 4,36 4,14" fill="none" stroke="#D4A017" stroke-width="1.8"/>
-      <circle cx="11" cy="14" r="2.2" fill="#D4A017"/>
-      <text x="20" y="26" font-family="Arial Black,Impact,sans-serif" font-size="13" font-weight="900" fill="#EDF2FF" text-anchor="middle" letter-spacing="1">ADS</text>
-    </svg>
-    <div class="nav-wm">AYAAN<em>&</em>DAN</div>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#challenges">Challenges</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="challenges/appearances.html">On Stage</a></li>
-    <li><a href="#socials">Follow</a></li>
-    <li><a href="#suggest">Suggest</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="mobile-donate">Donate ↗</a></li>
-  </ul>
-  <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="btn">Donate</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<!-- HEADER -->
+<header class="hd" id="nav">
+  <div class="hd-in">
+    <a class="brand" href="#top"><span class="mark">A</span><b>Ayaan<em>&amp;</em>Dan</b></a>
+    <nav class="nav" id="navLinks">
+      <a href="#challenges">Challenges</a>
+      <a href="#story">Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="challenges/appearances.html">On Stage</a>
+      <a href="#contact">Contact</a>
+      <a class="btn gold" href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener">Donate</a>
+    </nav>
+    <button class="burger" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-ghost">ADS</div>
-  <div class="hero-content">
-    <div class="hero-tag">UK Endurance &amp; Charity</div>
-    <h1 class="hero-title">Staying<br><span class="outline">Harder</span><span class="gold">.</span></h1>
-    <p class="hero-sub">Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-n">£2,350<span>+</span></div><div class="stat-l">Total Raised</div></div>
-      <div class="stat"><div class="stat-n">7</div><div class="stat-l">Challenges Done</div></div>
-      <div class="stat"><div class="stat-n">3</div><div class="stat-l">Charities</div></div>
-      <div class="stat"><div class="stat-n">100<span style="font-size:26px">km</span></div><div class="stat-l">Furthest Run</div></div>
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">UK Endurance &middot; Charity &middot; Est. 2025</span>
+      <h1>Staying<br>harder<span class="u">.</span></h1>
+      <p class="lede">Two school friends. Increasingly ridiculous physical challenges. Real money raised for real causes.</p>
+      <div class="hero-cta">
+        <a class="btn gold" href="#challenges">See the challenges</a>
+        <a class="btn ghost" href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener">Donate</a>
+      </div>
+    </div>
+    <div class="hero-figure reveal">
+      <img src="IMG_1406.png" alt="Ayaan and Dan"/>
+      <span class="tag">£2,350<small>RAISED</small></span>
+      <span class="cap">Ayaan &amp; Dan &middot; Manchester</span>
     </div>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+  <div class="stats">
+    <div class="stat reveal"><div class="stat-n">£2,350<span>+</span></div><div class="lab">Total raised</div></div>
+    <div class="stat reveal"><div class="stat-n">7</div><div class="lab">Challenges done</div></div>
+    <div class="stat reveal"><div class="stat-n">100<span>km</span></div><div class="lab">Furthest run</div></div>
+    <div class="stat reveal"><div class="stat-n">3</div><div class="lab">Charities</div></div>
+  </div>
 </section>
-
-<!-- PHOTO STRIP -->
-<div id="photostrip">
-  <img class="strip-img" src="images/photo-01.jpg" alt="Ayaan and Dan" onclick="openLB(this.src)"/>
-  <img class="strip-img" src="images/photo-02.jpg" alt="Night challenge" onclick="openLB(this.src)"/>
-  <img class="strip-img" src="images/photo-03.jpg" alt="Pizza Run — Franco Manca" onclick="openLB(this.src)"/>
-  <img class="strip-img" src="images/photo-04.jpg" alt="48 Mile challenge poster" onclick="openLB(this.src)"/>
-  <img class="strip-img" src="images/photo-05.jpg" alt="Strava 48 miles" onclick="openLB(this.src)"/>
-</div>
 
 <!-- MARQUEE -->
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><b>Staying <em>Harder</em></b><span class="dot">&#9679;</span><b>&pound;2,350+ Raised</b><span class="dot">&#9679;</span><b>7 Challenges Done</b><span class="dot">&#9679;</span><b><em>Ayaan &amp; Dan</em></b><span class="dot">&#9679;</span><b>100km in 20 Hours</b><span class="dot">&#9679;</span><b>3,000 Push-Ups</b><span class="dot">&#9679;</span><b>Three Peaks Next</b><span class="dot">&#9679;</span></div></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-visual reveal">
-    <div class="about-frame">
-      <img class="about-frame-img" src="images/photo-06.jpg" alt="Ayaan and Dan"/>
-      <div class="about-frame-overlay"></div>
-      <div class="about-logo-center">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="56,10 190,10 190,190 10,190 10,66" fill="none" stroke="#D4A017" stroke-width="2.5"/>
-          <polygon points="10,66 56,10 56,66" fill="#D4A017" opacity="0.2"/>
-          <circle cx="56" cy="66" r="6" fill="#D4A017" opacity="0.95"/>
-          <polygon points="64,22 182,22 182,178 22,178 22,74" fill="none" stroke="#D4A017" stroke-width="0.75" opacity="0.25"/>
-          <text x="100" y="128" font-family="Arial Black,Impact,sans-serif" font-size="72" font-weight="900" fill="#EDF2FF" text-anchor="middle" letter-spacing="4">ADS</text>
-          <line x1="30" y1="140" x2="170" y2="140" stroke="#D4A017" stroke-width="1.5" opacity="0.5"/>
-          <text x="100" y="158" font-family="Arial,sans-serif" font-size="11" fill="#D4A017" text-anchor="middle" letter-spacing="4" opacity="0.85">AYAAN · DAN</text>
-        </svg>
-      </div>
-    </div>
-    <div class="about-accent"><div class="big">ADS</div><div class="small">Est. Aug 2025</div></div>
-  </div>
-  <div class="reveal" style="padding-top:8px">
-    <div class="sec-label">Who We Are</div>
-    <h2 class="sec-title">Two mates.<br>One mission.</h2>
-    <p class="about-body"><strong>AyaanDanShenanigins</strong> is a charity endurance brand built by two school friends from Manchester — Ayaan and Dan. The concept: do increasingly ridiculous physical challenges, document everything honestly, and raise real money for real causes.<br><br>Started in August 2025 and inspired by <strong>David Goggins</strong>, every challenge is bigger and more painful than the last. This isn't a fun run. It's a sufferfest — and that's the point.</p>
-    <div class="pillars">
-      <div class="pillar"><div class="pillar-n">01</div><div><div class="pillar-title">Goggins Grit</div><div class="pillar-desc">Voluntary suffering. Push way past what seems possible.</div></div></div>
-      <div class="pillar"><div class="pillar-n">02</div><div><div class="pillar-title">Equal Partnership</div><div class="pillar-desc">Always both of them. The banter and shared suffering is the show.</div></div></div>
-      <div class="pillar"><div class="pillar-n">03</div><div><div class="pillar-title">The Cause</div><div class="pillar-desc">Every challenge has a real charity. It's not just content — it means something.</div></div></div>
-    </div>
-  </div>
-</section>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <b>Staying <em>harder</em></b><span class="d">/</span><b>100km in 20 hours</b><span class="d">/</span><b>3,000 push-ups</b><span class="d">/</span><b><em>Ayaan &amp; Dan</em></b><span class="d">/</span><b>48 miles, 48 hours</b><span class="d">/</span><b>£2,350+ raised</b><span class="d">/</span><b>Three peaks next</b><span class="d">/</span>
+</div></div>
 
 <!-- CHALLENGES -->
-<section id="challenges">
-  <div class="reveal"><div class="sec-label">The Suffering Log</div><h2 class="sec-title">Challenges</h2></div>
-  <div class="ch-grid">
-
-    <a class="ch-card reveal" href="challenges/marathon-debut.html">
-      <div class="ch-ghost">01</div>
-      <img class="ch-img" src="images/photo-07.jpg" alt="The First Marathon"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">The First Marathon</div>
-        <div class="ch-detail">Our first ever marathon — 42.17km, completely self-organised, on the morning of prom. Zero training. The birth of ADS.</div>
-        <div class="ch-raised">The debut →</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/100k.html">
-      <div class="ch-ghost">02</div>
-      <img class="ch-img" src="images/photo-08.jpg" alt="The 100K Run"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">The 100K Run</div>
-        <div class="ch-detail">5km every hour for 20 hours straight — 100.18km for clean water. Featured by Altrincham HQ as local heroes.</div>
-        <div class="ch-raised">~£1,100 · WaterAid</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/triathlon.html">
-      <div class="ch-ghost">03</div>
-      <img class="ch-img" src="images/photo-09.jpg" alt="The Triathlon"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">The Triathlon</div>
-        <div class="ch-detail">Self-organised: 2,000m swim · 40km bike · 10km run. No event, no medal — just the three disciplines.</div>
-        <div class="ch-raised">Completed ✓</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/push-ups.html">
-      <div class="ch-ghost">04</div>
-      <img class="ch-img" src="images/photo-10.jpg" alt="3,000 Push-Ups"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">3,000 Push-Ups</div>
-        <div class="ch-detail">100 push-ups a day, all November. 119 people joined on GymRats — 218,197 reps logged. Smashed the £1,000 goal.</div>
-        <div class="ch-raised">Raised: £1,063.67</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/48-48.html">
-      <div class="ch-ghost">05</div>
-      <img class="ch-img" src="images/photo-11.jpg" alt="48 Miles / 48 Hours"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">48 Miles / 48 Hours</div>
-        <div class="ch-detail">4 miles every 4 hours for 48 hours, NYE into the New Year. Redemption for last year's failed attempt. "Would not recommend."</div>
-        <div class="ch-raised">Completed ✓</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/pizza-run.html">
-      <div class="ch-ghost">06</div>
-      <img class="ch-img" src="images/photo-12.jpg" alt="The Pizza Run"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">The Pizza Run</div>
-        <div class="ch-detail">Franco Manca's 'No Rules Jan' — £1 off per km. Three of us ran 27.45km each = 8 free pizzas, £75.60 wiped off.</div>
-        <div class="ch-raised">8 pizzas ✓</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <a class="ch-card reveal" href="challenges/manchester-marathon.html">
-      <div class="ch-ghost">07</div>
-      <img class="ch-img" src="images/photo-13.jpg" alt="Manchester Marathon"/>
-      <div class="ch-body">
-        <span class="badge badge-done">Completed</span>
-        <div class="ch-name">Manchester Marathon</div>
-        <div class="ch-detail">The official adidas Manchester Marathon, 19 April 2026. Both ran it; Dan crossed in 4:26.</div>
-        <div class="ch-raised">Raised: £100 · BHF</div>
-        <span class="ch-view">View challenge <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
-    <div class="ch-card featured reveal">
-      <div class="ch-ghost">08</div>
-      <div class="ch-img-placeholder"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.2"><path d="M3 17l4-8 4 4 3-6 4 10"/><circle cx="12" cy="5" r="1"/></svg></div>
-      <div class="ch-body">
-        <span class="badge badge-next">Up Next</span>
-        <div class="ch-name">Three Peaks in 24 Hrs</div>
-        <div class="ch-detail">Ben Nevis, Scafell Pike, Snowdon — one continuous push. The biggest challenge to date.</div>
-        <div class="ch-raised">Coming Soon →</div>
-      </div>
+<section class="sec" id="challenges">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The suffering log</span>
+      <h2>Seven challenges. One year. Zero excuses.</h2>
+      <p>From an untrained marathon on the morning of prom to 100km in 20 hours — each one bigger and more painful than the last.</p>
     </div>
-
-    <div class="ch-card reveal">
-      <div class="ch-ghost">09</div>
-      <div class="ch-img-placeholder"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.2"><path d="M12 2a3 3 0 1 0 0 6"/><path d="M12 8v4"/><path d="M8 20l4-8 4 8"/><circle cx="12" cy="18" r="1"/></svg></div>
-      <div class="ch-body">
-        <span class="badge badge-summer">Summer 2025</span>
-        <div class="ch-name">Olympic Triathlon</div>
-        <div class="ch-detail">A proper sanctioned Olympic-distance event. Upgrade from the self-organised tri. Swim · Bike · Run.</div>
-        <div class="ch-raised">Planned →</div>
-      </div>
+    <div class="cx">
+      <a class="reveal" href="challenges/marathon-debut.html">
+        <span class="ix">01</span>
+        <span class="nm">The First Marathon<small>Self-organised &middot; the debut</small></span>
+        <span class="meta">22 Jun 2025 &middot; 42.2 km</span>
+        <span class="res">The debut <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="IMG_1406.png" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/100k.html">
+        <span class="ix">02</span>
+        <span class="nm">The 100K Run<small>5km every hour &times; 20 hours</small></span>
+        <span class="meta">1 Sep 2025 &middot; 100 km</span>
+        <span class="res">~£1,100 &middot; WaterAid <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="IMG_1554.jpeg" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/triathlon.html">
+        <span class="ix">03</span>
+        <span class="nm">The Triathlon<small>Swim &middot; bike &middot; run</small></span>
+        <span class="meta">24 Oct 2025 &middot; 52 km</span>
+        <span class="res">Completed <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="IMG_1619.jpeg" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/push-ups.html">
+        <span class="ix">04</span>
+        <span class="nm">3,000 Push-Ups<small>119 people &middot; all November</small></span>
+        <span class="meta">Nov 2025 &middot; 218k reps</span>
+        <span class="res">£1,063 &middot; TCT <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="IMG_2142.jpeg" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/48-48.html">
+        <span class="ix">05</span>
+        <span class="nm">48 Miles / 48 Hours<small>4 miles every 4 hours</small></span>
+        <span class="meta">30 Dec 2025 &middot; 77 km</span>
+        <span class="res">Redemption <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="IMG_0442.jpeg" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/pizza-run.html">
+        <span class="ix">06</span>
+        <span class="nm">The Pizza Run<small>Franco Manca &middot; No Rules Jan</small></span>
+        <span class="meta">Jan 2026 &middot; 27 km</span>
+        <span class="res">8 free pizzas <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="e0bea713-c0f3-4ed7-aa87-e80d5e2e9841.jpeg" alt=""/></span>
+      </a>
+      <a class="reveal" href="challenges/manchester-marathon.html">
+        <span class="ix">07</span>
+        <span class="nm">Manchester Marathon<small>The official adidas race</small></span>
+        <span class="meta">19 Apr 2026 &middot; 26.2 mi</span>
+        <span class="res">£100 &middot; BHF <span class="arrow">&rarr;</span></span>
+        <span class="thumb"><img src="F821C28A-622C-42DB-A813-5787C4D43BB2.jpeg" alt=""/></span>
+      </a>
     </div>
-
-    <div class="ch-card reveal">
-      <div class="ch-ghost">10</div>
-      <div class="ch-img-placeholder"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.2"><path d="M6 4h12M6 20h12M8 4v4a4 4 0 0 0 8 0V4M8 20v-4a4 4 0 0 1 8 0v4"/></svg></div>
-      <div class="ch-body">
-        <span class="badge badge-planned">Planned</span>
-        <div class="ch-name">HYROX</div>
-        <div class="ch-detail">Sanctioned HYROX fitness race — 8km run broken up by 8 functional workout stations. One of the fastest growing races in the world.</div>
-        <div class="ch-raised">TBC</div>
-      </div>
+    <div class="cx-foot reveal">
+      <span>Up next &mdash;</span>
+      <span class="pill">Three Peaks in 24 Hrs</span>
+      <span class="pill">HYROX</span>
+      <span class="pill">Olympic Triathlon</span>
+      <span class="pill">100 Miles in 24 Hrs</span>
     </div>
-
-    <div class="ch-card reveal">
-      <div class="ch-ghost">11</div>
-      <div class="ch-img-placeholder"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
-      <div class="ch-body">
-        <span class="badge badge-planned">Planned</span>
-        <div class="ch-name">100 Miles in 24 Hours</div>
-        <div class="ch-detail">The theoretical ceiling. 100 miles, one day. This one exists somewhere between ambition and insanity.</div>
-        <div class="ch-raised">One Day →</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- RAISED -->
-<section id="raised" class="reveal">
-  <div class="raised-amt">£<span>2,350</span>+</div>
-  <div class="raised-divider"></div>
-  <div class="raised-sub">raised for charity since August 2025</div>
-  <div class="charities">
-    <span class="charity">British Heart Foundation</span>
-    <span class="charity">Teenage Cancer Trust</span>
-    <span class="charity">WaterAid</span>
+<!-- PRESS / RAISED -->
+<section class="sec alt" id="press">
+  <div class="wrap">
+    <div class="feature">
+      <div class="reveal">
+        <span class="eyebrow">As featured</span>
+        <p class="quote">Two remarkable 16-year-olds from Altrincham Grammar &mdash; <b>running 100 kilometres in just 20 hours</b>, all to raise money for clean water.</p>
+        <div class="src">Altrincham HQ &middot; Local Heroes</div>
+      </div>
+      <div class="big reveal">
+        <div class="n stat-n">£2,350<span>+</span></div>
+        <div class="l">Raised for charity since 2025</div>
+        <div class="charities">
+          <span class="pill">British Heart Foundation</span>
+          <span class="pill">Teenage Cancer Trust</span>
+          <span class="pill">WaterAid</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
-  <div class="reveal"><div class="sec-label">In The Field</div><h2 class="sec-title">The evidence.</h2></div>
-  <div class="gallery-grid">
-    <div class="g-item g-tall reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-14.jpg" alt="Pizza Run — collecting the goods"/>
-      <div class="g-label">Pizza Run Payoff</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-15.jpg" alt="Franco Manca"/>
-      <div class="g-label">Franco Manca · Pizza Run</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-16.jpg" alt="Mid challenge"/>
-      <div class="g-label">Somewhere in the suffering</div>
-    </div>
-    <div class="g-item g-wide reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-17.jpg" alt="Strava — 48 miles 48 hours"/>
-      <div class="g-label">48 Miles · 48 Hours · Strava</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-18.jpg" alt="48 hour poster"/>
-      <div class="g-label">The Poster</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-19.jpg" alt="3000 Push-Ups Challenge"/>
-      <div class="g-label">3,000 Push-Ups</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-20.jpg" alt="Pre-challenge"/>
-      <div class="g-label">Ready to go</div>
-    </div>
-    <div class="g-item reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-21.jpg" alt="Awards ceremony"/>
-      <div class="g-label">Push-Up Awards Night</div>
-    </div>
-    <div class="g-item g-wide reveal" onclick="openLB(this.querySelector('img').src)">
-      <img src="images/photo-22.jpg" alt="The pizzas"/>
-      <div class="g-label">The Reward — 8 Pizzas</div>
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">In the field</span><h2>The evidence.</h2></div>
+    <div class="gal">
+      <figure class="cg tall reveal"><img src="e0bea713-c0f3-4ed7-aa87-e80d5e2e9841.jpeg" alt="The reward"/><figcaption class="gl">The reward &mdash; 8 pizzas</figcaption></figure>
+      <figure class="cg reveal"><img src="IMG_0448.jpeg" alt="Awards night"/><figcaption class="gl">Push-up awards night</figcaption></figure>
+      <figure class="cg wide reveal"><img src="IMG_2140.jpeg" alt="On stage at Sangam"/><figcaption class="gl">On stage at Sangam</figcaption></figure>
+      <figure class="cg reveal"><img src="IMG_1554.jpeg" alt="Dawn, mid-100K"/><figcaption class="gl">Dawn, somewhere in 100km</figcaption></figure>
+      <figure class="cg reveal"><img src="fd41386c-3e61-4154-81a4-409901e27c0b.jpeg" alt="Franco Manca sourdough"/><figcaption class="gl">Franco Manca sourdough</figcaption></figure>
+      <figure class="cg wide reveal"><img src="F821C28A-622C-42DB-A813-5787C4D43BB2.jpeg" alt="Manchester Marathon 2026"/><figcaption class="gl">Manchester Marathon 2026</figcaption></figure>
+      <figure class="cg reveal"><img src="IMG_1945.jpeg" alt="48 hours later"/><figcaption class="gl">48 hours later</figcaption></figure>
+      <figure class="cg reveal"><img src="5E600DAB-D5FB-44A5-92DC-9AD30840ACBF.jpeg" alt="Fuel for 20 hours"/><figcaption class="gl">Fuel for 20 hours</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- SOCIALS -->
-<section id="socials">
-  <div class="reveal"><div class="sec-label">Find Us</div><h2 class="sec-title">Follow the<br>suffering.</h2></div>
-  <div class="social-grid">
-    <a href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener" class="social-card reveal">
-      <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="#D4A017"/></svg></div>
-      <div class="social-name">Instagram</div>
-      <div class="social-handle">@ayaandanshenanigins<br><span style="color:var(--gold);font-size:11px">254 followers</span></div>
-      <div class="social-arrow">↗</div>
-    </a>
-    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="social-card reveal">
-      <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-      <div class="social-name">Tiltify</div>
-      <div class="social-handle">@ayaan-dan-shenanigans<br><span style="color:var(--gold);font-size:11px">£1,063 raised</span></div>
-      <div class="social-arrow">↗</div>
-    </a>
-    <a href="https://youtube.com/@ayaandanshenanigins" target="_blank" rel="noopener" class="social-card reveal">
-      <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45a2.78 2.78 0 0 0-1.95 1.97A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#D4A017" stroke="none"/></svg></div>
-      <div class="social-name">YouTube</div>
-      <div class="social-handle">Long-form challenge docs<br><span style="color:var(--muted);font-size:11px">Full vlogs</span></div>
-      <div class="social-arrow">↗</div>
-    </a>
-    <a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener" class="social-card reveal">
-      <div class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <div class="social-name">Donate</div>
-      <div class="social-handle">Support the cause<br><span style="color:var(--gold);font-size:11px">via Tiltify →</span></div>
-      <div class="social-arrow">↗</div>
-    </a>
-  </div>
-</section>
-
-<!-- SUGGEST -->
-<section id="suggest">
-  <div class="reveal" style="padding-top:6px">
-    <div class="sec-label">Community</div>
-    <h2 class="sec-title">Suggest a<br>challenge.</h2>
-    <p class="suggest-body">Got an idea that'll make us suffer? <strong>We want to hear it.</strong> The more unhinged the better. Every challenge starts somewhere.</p>
-  </div>
-  <form class="form reveal" id="suggestForm" novalidate>
-    <div class="form-row">
-      <div class="field"><label for="sn">Your Name</label><input type="text" placeholder="First name" id="sn" name="name" autocomplete="given-name"/></div>
-      <div class="field"><label for="sd">Difficulty</label><select id="sd" name="difficulty"><option value="">Select...</option><option>Painful (warm-up tier)</option><option>Brutal (proper challenge)</option><option>Disgusting (Goggins tier)</option><option>Actually impossible</option></select></div>
+<!-- STORY / ABOUT -->
+<section class="sec alt" id="story">
+  <div class="wrap">
+    <div class="about">
+      <img class="reveal" src="IMG_1407.png" alt="Ayaan and Dan"/>
+      <div class="reveal">
+        <span class="eyebrow">Who we are</span>
+        <h2>Two mates. One mission.</h2>
+        <p><strong>AyaanDanShenanigins</strong> is a charity endurance brand built by two school friends from Manchester &mdash; Ayaan and Dan. The concept: do increasingly ridiculous physical challenges, document everything honestly, and raise real money for real causes.</p>
+        <p>Started in 2025 and inspired by <strong>David Goggins</strong>, every challenge is bigger and more painful than the last. This isn't a fun run &mdash; it's a sufferfest, and that's the point.</p>
+        <div class="pillars">
+          <div class="pil"><div class="pn">01</div><div><h4>Goggins grit</h4><p>Voluntary suffering. Push way past what seems possible.</p></div></div>
+          <div class="pil"><div class="pn">02</div><div><h4>Equal partnership</h4><p>Always both of us. The banter and shared pain is the show.</p></div></div>
+          <div class="pil"><div class="pn">03</div><div><h4>The cause</h4><p>Every challenge has a real charity. It means something.</p></div></div>
+        </div>
+      </div>
     </div>
-    <div class="field"><label for="st">Challenge Name</label><input type="text" placeholder="Give it a name" id="st" name="challenge" required/></div>
-    <div class="field"><label for="sb">Describe It</label><textarea placeholder="What is it? Distance, time, conditions, why it would break us..." id="sb" name="description" required></textarea></div>
-    <div class="field"><label for="sc">Suggested Charity (optional)</label><input type="text" placeholder="e.g. Mind, Cancer Research UK" id="sc" name="charity"/></div>
-    <button type="submit" class="btn" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Submit Challenge <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-    <div class="success" id="suc-s" role="status">Challenge submitted — we'll consider putting ourselves through it. Your email app should open to send it our way.</div>
-  </form>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="reveal"><div class="sec-label">Get In Touch</div><h2 class="sec-title">Contact us.</h2></div>
-  <div class="contact-grid">
-    <div class="contact-info reveal">
-      <div><div class="ci-label">Sponsorship</div><div class="ci-val">Want to sponsor a challenge or get your brand in front of a growing audience? We're open to partnerships.</div></div>
-      <div><div class="ci-label">Instagram</div><div class="ci-val"><a href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener">@ayaandanshenanigins</a></div></div>
-      <div><div class="ci-label">Fundraising</div><div class="ci-val"><a href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener">tiltify.com/@ayaan-dan-shenanigans</a></div></div>
-      <div><div class="ci-label">Current Sponsors</div><div class="ci-val">@thewindowco · @pizzaanna_ · GymRats App</div></div>
-    </div>
-    <form class="form reveal" id="contactForm" novalidate>
-      <div class="field"><label for="cn">Name</label><input type="text" placeholder="Your name" id="cn" name="name" autocomplete="name" required/></div>
-      <div class="field"><label for="ce">Email</label><input type="email" placeholder="email@example.com" id="ce" name="email" autocomplete="email" required/></div>
-      <div class="field"><label for="cs">Subject</label><select id="cs" name="subject"><option value="">Select...</option><option>Sponsorship Enquiry</option><option>Press / Media</option><option>Charity Partnership</option><option>General Message</option><option>Fan Mail (we like this one)</option></select></div>
-      <div class="field"><label for="cm">Message</label><textarea placeholder="What's on your mind?" id="cm" name="message" required></textarea></div>
-      <button type="submit" class="btn" style="width:fit-content;margin-top:4px;display:flex;align-items:center;gap:10px">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      <div class="success" id="suc-c" role="status">Message ready — your email app should open to send it. We'll get back to you soon.</div>
-    </form>
   </div>
 </section>
 
-<!-- SPONSORS -->
-<div id="sponsors">
-  <div class="sp-lbl">Sponsors</div>
-  <a href="https://instagram.com/thewindowco" target="_blank" rel="noopener" class="sp-link">@TheWindowCo</a>
-  <a href="https://instagram.com/pizzaanna_" target="_blank" rel="noopener" class="sp-link">@PizzaAnna</a>
-  <a href="https://share.gymrats.app" target="_blank" rel="noopener" class="sp-link">GymRats App</a>
-  <span class="sp-link sp-cta">Become a sponsor →</span>
-</div>
+<!-- FOLLOW -->
+<section class="sec" id="follow">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Find us</span><h2>Follow the suffering.</h2></div>
+    <div class="follow">
+      <a class="fcard reveal" href="https://instagram.com/ayaandanshenanigins" target="_blank" rel="noopener"><div class="ic">Instagram</div><h4>@ayaandanshenanigins</h4><p>254 followers &middot; the daily suffering</p></a>
+      <a class="fcard reveal" href="https://tiltify.com/@ayaan-dan-shenanigans" target="_blank" rel="noopener"><div class="ic">Tiltify</div><h4>Donate</h4><p>£1,063+ raised &middot; back the cause</p></a>
+      <a class="fcard reveal" href="https://youtube.com/@ayaandanshenanigins" target="_blank" rel="noopener"><div class="ic">YouTube</div><h4>Full vlogs</h4><p>Long-form challenge documentaries</p></a>
+      <a class="fcard reveal" href="challenges/appearances.html"><div class="ic">On stage</div><h4>ADS live</h4><p>Sangam &amp; Utsav appearances</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT + SUGGEST -->
+<section class="sec alt" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Get involved</span><h2>Suggest a challenge, or get in touch.</h2><p>Got an idea that'll make us suffer? The more unhinged the better. Sponsors and press welcome too.</p></div>
+    <div class="forms">
+      <form class="reveal" id="suggestForm" novalidate>
+        <h4 style="font-weight:800;margin-bottom:18px;font-size:18px">Suggest a challenge</h4>
+        <div class="row2">
+          <div class="field"><label for="sn">Your name</label><input id="sn" name="name" type="text" placeholder="First name" autocomplete="given-name"/></div>
+          <div class="field"><label for="sd">Difficulty</label><select id="sd" name="difficulty"><option value="">Select…</option><option>Painful (warm-up tier)</option><option>Brutal (proper challenge)</option><option>Disgusting (Goggins tier)</option><option>Actually impossible</option></select></div>
+        </div>
+        <div class="field"><label for="st">Challenge name</label><input id="st" name="challenge" type="text" placeholder="Give it a name" required/></div>
+        <div class="field"><label for="sb">Describe it</label><textarea id="sb" name="description" placeholder="Distance, time, conditions, why it would break us…" required></textarea></div>
+        <div class="field"><label for="sc">Suggested charity (optional)</label><input id="sc" name="charity" type="text" placeholder="e.g. Mind, Cancer Research UK"/></div>
+        <button class="btn gold" type="submit">Submit challenge</button>
+        <div class="success" id="suc-s" role="status">Challenge submitted — your email app should open to send it our way.</div>
+      </form>
+      <form class="reveal" id="contactForm" novalidate>
+        <h4 style="font-weight:800;margin-bottom:18px;font-size:18px">Contact us</h4>
+        <div class="field"><label for="cn">Name</label><input id="cn" name="name" type="text" placeholder="Your name" autocomplete="name" required/></div>
+        <div class="field"><label for="ce">Email</label><input id="ce" name="email" type="email" placeholder="email@example.com" autocomplete="email" required/></div>
+        <div class="field"><label for="cs">Subject</label><select id="cs" name="subject"><option value="">Select…</option><option>Sponsorship enquiry</option><option>Press / media</option><option>Charity partnership</option><option>General message</option></select></div>
+        <div class="field"><label for="cm">Message</label><textarea id="cm" name="message" placeholder="What's on your mind?" required></textarea></div>
+        <button class="btn gold" type="submit">Send message</button>
+        <div class="success" id="suc-c" role="status">Message ready — your email app should open to send it.</div>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-logo">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="11,4 36,4 36,36 4,36 4,14" fill="none" stroke="#D4A017" stroke-width="1.8"/>
-      <circle cx="11" cy="14" r="2.2" fill="#D4A017"/>
-      <text x="20" y="26" font-family="Arial Black,Impact,sans-serif" font-size="13" font-weight="900" fill="#EDF2FF" text-anchor="middle" letter-spacing="1">ADS</text>
-    </svg>
-    <div class="footer-wm">AYAAN<em>&</em>DAN</div>
+<footer class="ft">
+  <div class="wrap ft-in">
+    <div><b>AyaanDanShenanigins</b> &middot; Staying harder.</div>
+    <div>Sponsors: @TheWindowCo &middot; @PizzaAnna &middot; GymRats</div>
+    <div>&copy; 2025–2026 &middot; UK Endurance &amp; Charity</div>
   </div>
-  <div class="footer-tag">Staying Harder.</div>
-  <div class="footer-copy">© 2025–2026 AyaanDanShenanigins<br>UK Endurance &amp; Charity</div>
 </footer>
 
-<!-- BACK TO TOP -->
 <button id="toTop" aria-label="Back to top">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
 <script src="app.js" defer></script>
