@@ -457,11 +457,17 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
 .marquee{background:linear-gradient(90deg,rgba(184,133,28,.06),transparent,rgba(184,133,28,.06))}
 
 /* ===== CHALLENGE SUBPAGES — lighter, editorial ===== */
-.cnav{background:rgba(255,255,255,.78)}
+.cnav{background:rgba(255,255,255,.78);padding-top:14px;padding-bottom:14px}
 .cnav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38,.07)}
-.chero{min-height:80vh}
-.chero-img img{filter:brightness(1) saturate(1.03) contrast(1.02);object-position:center 30%}
-.chero-img::after{background:linear-gradient(to top,#FFFFFF 0%,rgba(255,255,255,.86) 24%,rgba(255,255,255,.3) 52%,rgba(255,255,255,0) 72%)}
+/* hero: shorter so the photo reads as a proper image, not a cropped band */
+.chero{min-height:62vh;padding-bottom:52px}
+/* keep the photo vivid (was washing out) and show more of the subject */
+.chero-img img{filter:brightness(1.02) saturate(1.07) contrast(1.03);object-position:center 34%}
+/* fade only into the lower band where the title sits — far less white wash */
+.chero-img::after{background:linear-gradient(to top,#FFFFFF 0%,rgba(255,255,255,.74) 20%,rgba(255,255,255,.28) 46%,rgba(255,255,255,.04) 70%,rgba(255,255,255,0) 100%)}
+/* lift the dark title/meta off the photo for legibility now the wash is lighter */
+.chero-title{text-shadow:0 2px 30px rgba(255,255,255,.55)}
+.chero-meta{text-shadow:0 1px 14px rgba(255,255,255,.6)}
 .chero-num{color:rgba(184,133,28,.10)}
 .chero-tag{background:rgba(255,255,255,.7)}
 .chero-meta i{color:var(--faint)}
@@ -474,11 +480,20 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
 .cgallery-grid img{filter:brightness(.97) saturate(1)}
 .cg:hover img{filter:brightness(1.05) saturate(1.06)}
 .ccta{box-shadow:0 1px 2px rgba(20,27,38,.04)}
-.cpn a:hover{background:var(--surface)}
+/* prev/next pager — slimmer, less of a giant block */
+.cpn a{padding:24px 44px;transition:background .3s,padding .25s}
+.cpn span.dis{padding:24px 44px}
+.cpn .dir{font-size:10px}
+.cpn .nm{font-size:17px;margin-top:3px}
+.cpn a:hover{background:var(--surface);padding-left:50px}
+.cpn a.next:hover{padding-left:44px;padding-right:50px}
 
 /* Mobile drawer — white */
 @media(max-width:960px){
   .nav-links{background:rgba(255,255,255,.98);border-left:1px solid var(--border)}
   .nav-links a{color:var(--white)}
   .nav-links .mobile-donate{color:#FFFFFF;background:var(--gold);border:0}
+  .chero{min-height:56vh;padding:0 24px 40px}
+  .cpn a,.cpn span.dis{padding:22px 24px}
+  .cpn a:hover,.cpn a.next:hover{padding-left:24px;padding-right:24px}
 }

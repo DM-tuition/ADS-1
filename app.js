@@ -11,6 +11,7 @@ const obs = new IntersectionObserver(es => es.forEach(x => {
 $$('.ch-grid .reveal').forEach((el, i) => el.style.transitionDelay = (i % 3) * 65 + 'ms');
 $$('.social-grid .reveal').forEach((el, i) => el.style.transitionDelay = i * 55 + 'ms');
 $$('.gallery-grid .reveal').forEach((el, i) => el.style.transitionDelay = (i % 4) * 60 + 'ms');
+$$('.gal .reveal').forEach((el, i) => el.style.transitionDelay = (i % 4) * 45 + 'ms');
 $$('.reveal').forEach(el => obs.observe(el));
 
 /* ---- Mobile hamburger ---- */
