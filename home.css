@@ -157,6 +157,17 @@ a{color:inherit;text-decoration:none}
 .ft-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
 .ft b{color:var(--ink)}
 
+/* donation emphasis */
+.give-note{font-size:13px;color:var(--ink-2);margin-top:22px;max-width:34ch;margin-left:auto;margin-right:auto}
+.give-btn{margin-top:16px}
+
+/* sticky mobile donate bar */
+.dbar{position:fixed;left:0;right:0;bottom:0;z-index:160;display:none;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);box-shadow:0 -8px 30px rgba(20,27,38,.08)}
+.dbar-txt{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.dbar-txt b{font-size:15px;font-weight:800}
+.dbar-txt span{font-size:11.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dbar .btn{flex:none}
+
 #toTop{position:fixed;right:26px;bottom:26px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:0;display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:.3s;z-index:120}
 #toTop.show{opacity:1;transform:none;pointer-events:auto}
 
@@ -177,6 +188,9 @@ a{color:inherit;text-decoration:none}
   .hero-figure{order:-1}.hero-figure .tag{right:14px}
   .stats{grid-template-columns:1fr 1fr;gap:24px}
   .gal{column-count:2;column-gap:10px}.cg{margin-bottom:10px}
+  .dbar{display:flex}
+  body{padding-bottom:64px}
+  #toTop{bottom:80px;right:16px}
   .follow{grid-template-columns:1fr 1fr}
   .cx a{grid-template-columns:40px 1fr auto;gap:14px}
   .cx .meta,.cx .thumb{display:none}
