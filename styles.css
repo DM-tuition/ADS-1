@@ -460,9 +460,11 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
 .cnav{background:rgba(255,255,255,.78);padding-top:14px;padding-bottom:14px}
 .cnav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38,.07)}
 /* hero: shorter so the photo reads as a proper image, not a cropped band */
-.chero{min-height:62vh;padding-bottom:52px}
-/* keep the photo vivid (was washing out) and show more of the subject */
-.chero-img img{filter:brightness(1.02) saturate(1.07) contrast(1.03);object-position:center 34%}
+.chero{min-height:66vh;padding-bottom:52px}
+/* start the photo BELOW the fixed bar so it never covers anyone's face */
+.chero-img{top:56px}
+/* keep the photo vivid (was washing out); default focal point biased to faces */
+.chero-img img{filter:brightness(1.02) saturate(1.07) contrast(1.03);object-position:center 22%}
 /* fade only into the lower band where the title sits — far less white wash */
 .chero-img::after{background:linear-gradient(to top,#FFFFFF 0%,rgba(255,255,255,.74) 20%,rgba(255,255,255,.28) 46%,rgba(255,255,255,.04) 70%,rgba(255,255,255,0) 100%)}
 /* lift the dark title/meta off the photo for legibility now the wash is lighter */
@@ -493,7 +495,8 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
   .nav-links{background:rgba(255,255,255,.98);border-left:1px solid var(--border)}
   .nav-links a{color:var(--white)}
   .nav-links .mobile-donate{color:#FFFFFF;background:var(--gold);border:0}
-  .chero{min-height:56vh;padding:0 24px 40px}
+  .chero{min-height:60vh;padding:0 24px 40px}
+  .chero-img{top:48px}
   .cpn a,.cpn span.dis{padding:22px 24px}
   .cpn a:hover,.cpn a.next:hover{padding-left:24px;padding-right:24px}
 }

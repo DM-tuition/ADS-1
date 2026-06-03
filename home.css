@@ -50,13 +50,14 @@ a{color:inherit;text-decoration:none}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ---------- HERO ---------- */
-.hero{padding:170px 0 90px}
+.hero{padding:172px 0 86px;text-align:center}
+.hero-mid{max-width:820px;margin:0 auto}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.hero h1{font-size:clamp(44px,5.6vw,82px);line-height:1.02;letter-spacing:-2.5px;font-weight:800;margin:26px 0 0}
+.hero h1{font-size:clamp(52px,8.4vw,116px);line-height:.96;letter-spacing:-3px;font-weight:800;margin:24px 0 0}
 .hero h1 .thin{font-weight:300;color:var(--ink-2)}
 .hero h1 .u{color:var(--gold)}
-.hero .lede{font-size:19px;color:var(--ink-2);max-width:30ch;margin-top:26px;font-weight:400}
-.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero .lede{font-size:20px;color:var(--ink-2);max-width:46ch;margin:28px auto 0;font-weight:400}
+.hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;justify-content:center}
 .hero-figure{position:relative}
 .hero-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;object-position:center 25%}
 .hero-figure .cap{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);padding:9px 14px;border-radius:8px;font-size:12px;font-weight:600;color:var(--ink-2)}
@@ -64,7 +65,8 @@ a{color:inherit;text-decoration:none}
 .hero-figure .tag small{display:block;font-family:'Manrope';font-size:9px;font-weight:700;letter-spacing:2px;opacity:.85;margin-top:4px}
 
 /* stat row */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);margin-top:64px;padding-top:34px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line);margin-top:60px;padding-top:34px}
+.stats .stat{text-align:center}
 .stat .stat-n{font-family:'Bebas Neue';font-size:clamp(40px,5vw,58px);line-height:1;color:var(--ink)}
 .stat .stat-n span{color:var(--gold)}
 .stat .lab{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
