@@ -158,6 +158,38 @@ if (cf) cf.addEventListener('submit', e => {
 });
 $$('.field input,.field textarea,.field select').forEach(f => f.addEventListener('input', () => f.classList.remove('error')));
 
+/* ---- Next-up countdown ---- */
+const cdEl = $('#countdown');
+if (cdEl) {
+  const target = new Date(cdEl.dataset.date).getTime();
+  const set = (sel, v) => { const e = cdEl.querySelector(sel); if (e) e.textContent = String(v).padStart(2, '0'); };
+  function tick() {
+    const diff = target - Date.now();
+    if (isNaN(target) || diff <= 0) { set('[data-d]', 0); set('[data-h]', 0); set('[data-m]', 0); set('[data-s]', 0); return; }
+    set('[data-d]', Math.floor(diff / 864e5));
+    set('[data-h]', Math.floor(diff % 864e5 / 36e5));
+    set('[data-m]', Math.floor(diff % 36e5 / 6e4));
+    set('[data-s]', Math.floor(diff % 6e4 / 1e3));
+  }
+  tick(); setInterval(tick, 1000);
+}
+
+/* ---- Notify signup (opens mail client; swap mailto for a provider endpoint later) ---- */
+const nf = $('#notifyForm');
+if (nf) {
+  const ne = $('#ne');
+  ne.addEventListener('input', () => ne.classList.remove('error'));
+  nf.addEventListener('submit', e => {
+    e.preventDefault();
+    const val = ne.value.trim();
+    const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val);
+    ne.classList.toggle('error', !ok);
+    if (!ok) { ne.focus(); return; }
+    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Subscribe — next challenge')}&body=${encodeURIComponent('Add me to the AyaanDanShenanigins list: ' + val)}`;
+    showSuccess('suc-n'); nf.reset();
+  });
+}
+
 /* ---- Accessibility: alt text + lazy-load on content images ---- */
 $$('.g-item img').forEach(img => {
   const l = img.closest('.g-item').querySelector('.g-label');
