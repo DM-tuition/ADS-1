@@ -2,10 +2,11 @@
    ADS — editorial / premium homepage  (self-contained, brand-new design)
    ===================================================================== */
 :root{
-  --bg:#FFFFFF; --soft:#F6F7F9; --panel:#FBFBFC;
-  --ink:#15171C; --ink-2:#4A515C; --ink-3:#878E99;
-  --line:#EAECF0; --line-2:#DADEE6;
-  --gold:#A87C1B; --gold-2:#C2922A; --gold-wash:#F5EFE2;
+  --bg:#FFFFFF; --soft:#ECEEF2; --panel:#F6F7F9;
+  --grey:#26292F; --grey-2:#33373F; --grey-3:#4A4F59;   /* charcoal bands */
+  --ink:#191C22; --ink-2:#474D57; --ink-3:#868D98;
+  --line:#E3E6EC; --line-2:#D2D7DF;
+  --gold:#B8851C; --gold-2:#CF9F31; --gold-3:#EBCB6E; --gold-wash:#F6EFDD;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -235,3 +236,102 @@ a{color:inherit;text-decoration:none}
 .about h2{font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px;font-weight:800;margin:14px 0 14px;line-height:1.06}
 .about p{color:var(--ink-2);font-size:16px}
 .about p+p{margin-top:14px}
+
+/* =================================================================
+   AESTHETIC PACK — grey / gold / white
+   ================================================================= */
+/* fine film grain for a premium, non-flat surface */
+body::after{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.022;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* aurora retuned: gold + cool grey */
+.aurora span:nth-child(2){background:radial-gradient(circle,rgba(120,128,140,.10),transparent 70%)}
+
+/* HERO — dotted backdrop, gradient headline, scroll cue */
+.hero{position:relative}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(25,28,34,.055) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 72% 62% at 50% 34%,#000,transparent 76%);
+  mask-image:radial-gradient(ellipse 72% 62% at 50% 34%,#000,transparent 76%)}
+.hero h1 .u{background:linear-gradient(110deg,var(--gold) 0%,var(--gold-3) 44%,#fff7e0 52%,var(--gold-3) 60%,var(--gold) 100%);
+  background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:140% 0}50%{background-position:-40% 0}}
+.scrollcue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink-3)}
+.sc-line{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:scy 2s ease-in-out infinite}
+.sc-txt{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+@keyframes scy{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.3;transform:scaleY(.5)}}
+
+/* NAV — animated underline */
+.nav a:not(.btn){position:relative}
+.nav a:not(.btn)::after{content:'';position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--gold);transition:right .25s ease}
+.nav a:not(.btn):hover::after{right:0}
+
+/* BUTTONS — shine sweep */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;top:0;left:-130%;width:65%;height:100%;transform:skewX(-18deg);
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transition:left .6s ease}
+.btn:hover::after{left:150%}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,rgba(184,133,28,.22),transparent)}
+
+/* CHALLENGE rows — gold accent bar */
+.cx a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .25s ease}
+.cx a:hover::before{width:3px}
+
+/* STATS — hover lift + soft glow */
+.stat{transition:transform .25s ease}
+.stat:hover{transform:translateY(-3px)}
+.stat .stat-n{text-shadow:0 0 30px rgba(184,133,28,.12)}
+
+/* FOLLOW cards — gold top reveal */
+.fcard{position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.fcard:hover::before{transform:scaleX(1)}
+
+/* MARQUEE — gold-edged grey band */
+.marquee{background:linear-gradient(90deg,rgba(184,133,28,.07),transparent 28%,transparent 72%,rgba(184,133,28,.07))}
+
+/* ABOUT — designed brand card replaces the photo */
+.about-card{position:relative;overflow:hidden;border-radius:18px;padding:46px 40px;min-height:430px;
+  display:flex;flex-direction:column;justify-content:center;color:#fff;
+  background:linear-gradient(155deg,var(--grey) 0%,var(--grey-2) 100%);box-shadow:0 34px 80px rgba(20,27,38,.20)}
+.about-card::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 85% 60% at 82% -5%,rgba(207,159,49,.24),transparent 60%)}
+.about-card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
+.about-card>*{position:relative}
+.ac-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-3)}
+.ac-mark{font-family:'Bebas Neue';font-size:82px;line-height:1;letter-spacing:1px;margin:12px 0 18px}
+.ac-mark em{color:var(--gold-3);font-style:normal}
+.ac-quote{font-size:21px;font-weight:300;line-height:1.42;color:rgba(255,255,255,.92);max-width:24ch}
+.ac-stats{display:flex;gap:28px;margin-top:30px;border-top:1px solid rgba(255,255,255,.14);padding-top:22px}
+.ac-stats b{display:block;font-family:'Bebas Neue';font-size:34px;line-height:1}
+.ac-stats b span{color:var(--gold-3)}
+.ac-stats div>span{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* FOOTER — charcoal grey, gold edge */
+.ft{background:var(--grey);color:rgba(255,255,255,.62);padding:0;border-top:0;position:relative;z-index:2}
+.ft::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-3),var(--gold))}
+.ft .wrap{padding-top:58px;padding-bottom:32px}
+.ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:40px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-brand p{margin:14px 0 20px;max-width:34ch;color:rgba(255,255,255,.6);font-size:14px;line-height:1.6}
+.ft-logo{display:flex;align-items:center;gap:12px;font-weight:800;color:#fff}
+.ft-logo .mark{width:34px;height:34px;border:1.5px solid rgba(255,255,255,.5);display:grid;place-items:center;font-family:'Bebas Neue';font-size:15px}
+.ft-logo b{color:#fff;font-size:15px}
+.ft-logo b em{color:var(--gold-3);font-style:normal}
+.ft-col h5{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:700}
+.ft-col a,.ft-col span{display:block;color:rgba(255,255,255,.6);margin-bottom:9px;font-size:14px;transition:color .2s}
+.ft-col a:hover{color:var(--gold-3)}
+.ft-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:12.5px}
+.ft-bot b{color:#fff}
+
+@media(max-width:920px){
+  .scrollcue{display:none}
+  .about-card{min-height:auto;padding:32px 26px}
+  .ac-mark{font-size:66px}
+  .ft-top{grid-template-columns:1fr 1fr;gap:30px}
+  .ft-brand{grid-column:1 / -1}
+}
+@media(max-width:560px){
+  .ft-top{grid-template-columns:1fr}
+  .ac-stats{gap:18px}
+}
