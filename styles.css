@@ -468,7 +468,7 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
 /* hero: shorter so the photo reads as a proper image, not a cropped band */
 .chero{min-height:66vh;padding-bottom:52px}
 /* start the photo BELOW the fixed bar so it never covers anyone's face */
-.chero-img{top:56px}
+.chero-img{top:68px}
 /* keep the photo vivid (was washing out); default focal point biased to faces */
 .chero-img img{filter:brightness(1.02) saturate(1.07) contrast(1.03);object-position:center 22%}
 /* fade only into the lower band where the title sits — far less white wash */
@@ -502,7 +502,7 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
   .nav-links a{color:var(--white)}
   .nav-links .mobile-donate{color:#FFFFFF;background:var(--gold);border:0}
   .chero{min-height:60vh;padding:0 24px 40px}
-  .chero-img{top:48px}
+  .chero-img{top:62px}
   .cpn a,.cpn span.dis{padding:22px 24px}
   .cpn a:hover,.cpn a.next:hover{padding-left:24px;padding-right:24px}
 }
