@@ -94,6 +94,24 @@ if (!RM && HOVER) {
   });
 }
 
+/* ---- Card tilt + cursor spotlight (flash) ---- */
+if (!RM && HOVER) {
+  $$('.fcard, .about-card, .cg').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - .5) * -7;
+      const ry = ((e.clientX - r.left) / r.width - .5) * 7;
+      card.style.transform = `perspective(820px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', () => card.style.transform = '');
+  });
+  const spot = document.createElement('div'); spot.id = 'spot'; document.body.appendChild(spot);
+  addEventListener('pointermove', e => {
+    spot.style.setProperty('--mx', e.clientX + 'px');
+    spot.style.setProperty('--my', e.clientY + 'px');
+  }, { passive: true });
+}
+
 /* ---- Lightbox (global, keyboard accessible) ---- */
 let lbRet = null;
 window.openLB = function (src) {
@@ -217,14 +235,14 @@ if (!RM && innerWidth > 720) {
   const ctx = c.getContext('2d');
   let W, H, parts;
   const size = () => { W = c.width = innerWidth; H = c.height = innerHeight; };
-  const init = () => { parts = Array.from({ length: 34 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.5 + .4, s: Math.random() * .35 + .07, o: Math.random() * .16 + .05 })); };
+  const init = () => { parts = Array.from({ length: 66 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2 + .5, s: Math.random() * .45 + .08, o: Math.random() * .22 + .06 })); };
   function draw() {
     ctx.clearRect(0, 0, W, H);
     for (const p of parts) {
       p.y -= p.s; p.x += Math.sin(p.y * .01) * .15;
       if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; }
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7);
-      ctx.fillStyle = 'rgba(184,133,28,' + p.o + ')'; ctx.fill();
+      ctx.fillStyle = 'rgba(207,159,49,' + p.o + ')'; ctx.fill();
     }
     requestAnimationFrame(draw);
   }
