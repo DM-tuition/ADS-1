@@ -465,6 +465,9 @@ nav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38
 /* ===== CHALLENGE SUBPAGES — lighter, editorial ===== */
 .cnav{background:rgba(255,255,255,.78);padding-top:14px;padding-bottom:14px}
 .cnav.compact{background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(20,27,38,.07)}
+/* make "back" an obvious tappable button (the only way out in a home-screen app) */
+.cnav-back{padding:10px 18px;border:1px solid var(--bhi);border-radius:100px;background:#fff;color:var(--white);box-shadow:0 2px 12px rgba(20,27,38,.07)}
+.cnav-back:hover{border-color:var(--gold);color:var(--gold);background:#fff}
 /* hero: shorter so the photo reads as a proper image, not a cropped band */
 .chero{min-height:66vh;padding-bottom:52px}
 /* start the photo BELOW the fixed bar so it never covers anyone's face */
